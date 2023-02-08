@@ -1,0 +1,24 @@
+import datetime
+
+idade= input('Digite sua data de aniversário separada por /. ')
+dataSeparada = idade.split('/')
+data1= int(dataSeparada[0])
+data2= int(dataSeparada[1])
+data3= int(dataSeparada[2])
+hoje = datetime.datetime.now()
+dia= int(hoje.strftime('%d'))
+mes= int(hoje.strftime('%m'))
+ano= int(hoje.strftime('%Y'))
+
+idade = ano-data3
+if data2 > mes:
+    idade = idade -1
+    print('Você tem ',idade,' anos')
+if data2 == mes:
+    if data1 > dia:
+        idade= idade-1
+        print('Você tem ',idade,' anos')
+    else:
+        print('Você tem ',idade,' anos')
+if data1 == dia and data2 == mes:
+    print('Você está de aniversário hoje, parabéns pelo seus ', idade, 'de idade')
