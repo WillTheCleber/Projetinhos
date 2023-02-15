@@ -1,0 +1,10 @@
+num= int(input('Digite o numero que deseja saber o fatorial: '))
+numTest= num-1
+numView= num
+
+while numTest !=0:
+    cal= numView*numTest
+    numView= cal
+    numTest= numTest-1
+
+print('O numero fatorial de ', num,' é', numView)
