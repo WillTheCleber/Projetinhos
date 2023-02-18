@@ -108,5 +108,4 @@ while opcoes != 6:
     else:
         print('Opção inválida.')
 
-
 print('Fim do programa.')
