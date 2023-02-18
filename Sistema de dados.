@@ -75,7 +75,7 @@ while opcoes != 6:
             if procura in listaNome:
                 numProcura= listaNome.index(procura)
                 listaNome.pop(numProcura)
-                numProcuraGeral= listaGeral(procura)
+                numProcuraGeral= listaGeral.index(procura)
                 listaGeral.pop(numProcuraGeral)
                 listaGeral.pop(numProcuraGeral+1)
                 listaGeral.pop(numProcuraGeral+2)
@@ -87,7 +87,7 @@ while opcoes != 6:
             if procura in listaEmail:
                 numProcura= listaEmail.index(procura)
                 listaEmail.pop(numProcura)
-                numProcuraGeral= listaGeral(procura)
+                numProcuraGeral= listaGeral.index(procura)
                 listaGeral.pop(numProcuraGeral)
                 listaGeral.pop(numProcuraGeral-1)
                 listaGeral.pop(numProcuraGeral+1)
