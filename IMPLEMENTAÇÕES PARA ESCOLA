@@ -1,0 +1,150 @@
+''''Aqui está uma serie de implementações para programas escolares, que irão ajudar os funcionarios de uma escola.
+
+O PROGRAMA AINDA ESTA EM CONSTRUÇÃO E IREI TENTAR ATUALIZA-LO CONFORME VOU EVOLUINDO MEU CONHECIMENTO, ATÉ AGORA:
+
+implementações apenas com a logica de programação.'''
+
+
+
+
+
+print('1- Definir media')
+print('2- Adicionar aluno a escola.')
+print('3- Remover aluno.')
+print('4- Vizualizar alunos')
+print('5- Definição de numero máximo nas turmas.')
+print('6- Notificação de risco do aluno')
+
+
+opcoes= int(input('Escolha uma opção: '))
+subopcoes=None
+# escola=[]
+# alunoFundamental=[]
+# paisFunamental=[]
+# alunoMedio=[]
+# alunoAvançado=[]
+
+# BASE DE TESTES PRE-PROGRAMADA
+escola=['Caio','9255','Rodrigo','8455','José','Cleiton','5548','Selena','8888','Tim Maia','666']
+alunoFundamental=['José']
+paisFunamental=['José', 'Cleiton','5548']
+alunoMedio=['Rodrigo','Selena']
+alunoAvançado=['Caio','Tim Maia']
+
+
+
+
+#OBS> Ainda estou em fase de aprendizado, então ainda não sei implementar comandos de servidores, para tornar tudo mais útil, assim que aprender irei atualizar os programas aqui inseridos:
+
+
+while opcoes != '7':
+    
+    # IMPLEMENTAÇÃO DE ADICIONAR ALUNO A ESCOLA:
+    if opcoes== 2:
+        subopcoes=int(input('''O aluno em questão é de qual nivel? 
+        1- Fundamental
+        2- Medio
+        3- Avançado'''))
+        if subopcoes ==1:
+            aluno= input('Digite o nome do aluno completo: ')
+            paisAluno= input('Digite o nome do responsavel pelo aluno: ')
+            telefone= input('Digite o numero de telefone dos pais do aluno: ')
+            alunoFundamental.append(aluno)
+
+            paisFunamental.append(aluno)
+            paisFunamental.append(paisAluno)
+            paisFunamental.append(telefone)   
+            
+            escola.append(aluno)
+            escola.append(telefone)
+            escola.append(paisAluno)
+            print('O Aluno', aluno,' de nivel fundamental, com o responsavel ',paisAluno,' de telefone', telefone,' Foi adicionado com sucesso!')
+            
+            
+        elif subopcoes==2:
+            aluno=input('Digite o nome do aluno: ')
+            alunoMedio.append(aluno)
+            telefone= input('Digite o telefone para contato do aluno: ')            
+
+            escola.append(aluno)
+            escola.append(telefone)
+            print('O Aluno', aluno,' de telefone', telefone,' Foi adicionado com sucesso!')
+            
+            
+        elif subopcoes==3:
+            aluno=input('Digite o nome do aluno: ')
+            alunoAvançado.append(aluno)
+            telefone= input('Digite o telefone para contato do aluno: ')
+        
+            escola.append(aluno)
+            escola.append(telefone)
+            print('O Aluno', aluno,' de telefone', telefone,' Foi adicionado com sucesso!')
+            
+        else:
+            print('Opção invalida.')
+    #IMPLEMENTAÇÃO DE REMOVER ALUNO DA ESCOLA
+    if opcoes== 3:
+        subopcoes=str(input('Digite o nome do aluno registrado'))
+        if subopcoes in alunoMedio:
+            remover= escola.index(subopcoes)
+            escola.pop(remover)
+            escola.pop(remover+1)
+            remover2= alunoMedio.index(subopcoes)
+            alunoMedio.pop(remover2)
+
+            print(subopcoes, ' e seus dados foram removidos com sucesso!')
+
+        elif subopcoes in alunoAvançado:
+            remover= escola.index(subopcoes)
+            escola.pop(remover)
+            escola.pop(remover+1)
+            remover2= alunoAvançado.index(subopcoes)
+            alunoAvançado.pop(remover2)
+
+            print(subopcoes,' e seus dados foram removidos com sucesso!')
+
+        elif subopcoes in alunoFundamental:
+            remover= escola.index(subopcoes)
+            escola.pop(remover)
+            escola.pop(remover+1)
+            escola.pop(remover+2)
+
+            remover2= paisFunamental.index(subopcoes)
+            paisFunamental.pop(remover2)
+            paisFunamental.pop(remover2+1)
+            paisFunamental.pop(remover2+2)
+
+            remover=alunoFundamental.index(subopcoes)
+            alunoFundamental.pop(remover)
+
+            print(subopcoes,' e seus dados foram removidos com sucesso!')
+    # IMPLEMENTAÇÃO BASICA DE VISUALIZAÇÃO
+    if opcoes== 4:
+        subopcoes= int(input('''Qual nivel você deseja vizualizar
+        1- Fundamental
+        2- Medio
+        3- Avançado
+        -'''))
+        if subopcoes==1:
+            print(alunoFundamental)
+        elif subopcoes==2:
+            print(alunoMedio)
+        elif subopcoes==3:
+            print(alunoAvançado)
+        else:
+            print('Opção digitada não cadastrada.')
+
+
+
+
+
+
+    
+    print('1- Definir media')
+    print('2- Adicionar aluno a escola.')
+    print('3- Remover aluno.')
+    print('4- Vizualizar alunos')
+    print('5- Definição de numero máximo nas turmas.')
+    print('6- Notificação de risco do aluno')
+    opcoes= int(input('Escolha uma opção: '))
+
