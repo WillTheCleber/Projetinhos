@@ -18,11 +18,17 @@ print('6- Notificação de risco do aluno')
 
 opcoes= int(input('Escolha uma opção: '))
 subopcoes=None
+subopcoes2=None
 # escola=[]
+
 # alunoFundamental=[]
 # paisFunamental=[]
 # alunoMedio=[]
 # alunoAvançado=[]
+
+# notasAlunos=[]
+
+
 
 # BASE DE TESTES PRE-PROGRAMADA
 escola=['Caio','9255','Rodrigo','8455','José','Cleiton','5548','Selena','8888','Tim Maia','666']
@@ -30,6 +36,8 @@ alunoFundamental=['José']
 paisFunamental=['José', 'Cleiton','5548']
 alunoMedio=['Rodrigo','Selena']
 alunoAvançado=['Caio','Tim Maia']
+
+notasAlunos=['Caio', 7.5,'Rodrigo',8.0,'José',6.5,5.5,'Cleiton','Selena','Tim Maia',9.0,10.0,8.0]
 
 
 
@@ -53,13 +61,18 @@ while opcoes != '7':
 
             paisFunamental.append(aluno)
             paisFunamental.append(paisAluno)
-            paisFunamental.append(telefone)   
+            paisFunamental.append(telefone)
+
             
             escola.append(aluno)
             escola.append(telefone)
             escola.append(paisAluno)
+
+            notasAlunos.append(aluno)
             print('O Aluno', aluno,' de nivel fundamental, com o responsavel ',paisAluno,' de telefone', telefone,' Foi adicionado com sucesso!')
             
+
+
             
         elif subopcoes==2:
             aluno=input('Digite o nome do aluno: ')
@@ -68,6 +81,8 @@ while opcoes != '7':
 
             escola.append(aluno)
             escola.append(telefone)
+
+            notasAlunos.append(aluno)
             print('O Aluno', aluno,' de telefone', telefone,' Foi adicionado com sucesso!')
             
             
@@ -78,11 +93,13 @@ while opcoes != '7':
         
             escola.append(aluno)
             escola.append(telefone)
+
+            notasAlunos.append(aluno)
             print('O Aluno', aluno,' de telefone', telefone,' Foi adicionado com sucesso!')
             
         else:
             print('Opção invalida.')
-    #IMPLEMENTAÇÃO DE REMOVER ALUNO DA ESCOLA
+    #IMPLEMENTAÇÃO DE REMOVER ALUNO DA ESCOLA (apenas no)
     if opcoes== 3:
         subopcoes=str(input('Digite o nome do aluno registrado'))
         if subopcoes in alunoMedio:
@@ -91,6 +108,8 @@ while opcoes != '7':
             escola.pop(remover+1)
             remover2= alunoMedio.index(subopcoes)
             alunoMedio.pop(remover2)
+
+
 
             print(subopcoes, ' e seus dados foram removidos com sucesso!')
 
@@ -133,6 +152,151 @@ while opcoes != '7':
             print(alunoAvançado)
         else:
             print('Opção digitada não cadastrada.')
+    # IMPLEMENTAÇÕES PARA PROFESSORES DEFINIREM A NOTA 
+    if opcoes== 1:        
+        print('''Bem Vindo ao função notas "Área destinada aos professores", o que deseja realizar:
+        1- Adicionar notas
+        2- Visualizar notas de aluno
+        3- Definir media de aluno
+        4- Zerar as notas de um aluno.(USAR SOMENTE NO FINAL DE BIMESTRE)''')
+        subopcoes=int(input('-'))
+
+        #ADICIONAR NOTA
+        if subopcoes== 1:
+
+            subopcoes2= str(input('''Digite o nome completo do aluno:'''))
+            if subopcoes2 in notasAlunos:
+                nota= float(input('Digite a nota: '))
+                nota2= notasAlunos.index(subopcoes2)+1
+                notasAlunos.insert(nota2, nota)
+                print(nota,' foi adicionada com sucesso ao aluno ', subopcoes2)
+            else:
+                print('Aluno não encontrado')      
+
+        #VISUALIZAR NOTAS
+        elif subopcoes== 2:
+            subopcoes2= str(input('Digite o nome completo do aluno'))
+            print(notasAlunos)
+
+            if subopcoes2 in notasAlunos:
+
+                ident= notasAlunos.index(subopcoes2)
+                ident2= notasAlunos[ident+1]
+                print(type(ident2))
+                if isinstance(ident2, float):                
+                    quant= int(input('Quantas provas foram aplicadas até agora? '))
+                    print('O aluno', subopcoes2,' Tem as notas: ')
+                    for i in range (quant):
+                        print(notasAlunos[ident+1])
+                        ident= ident+1
+                elif ident2 != float:
+                    print('O aluno não tem nota nenhuma adicionada.')
+            else:
+                print('Aluno não encontrado.')
+
+        #CALCULAR MEDIA
+        elif subopcoes== 3:
+            subopcoes2= str(input('Digite o nome do aluno completo'))
+            if subopcoes2 in notasAlunos:
+                notaID= notasAlunos.index(subopcoes2)
+                nota= notasAlunos[notaID+1]
+                nota2=notasAlunos[notaID+2]
+                nota3=notasAlunos[notaID+3]
+                nota4=notasAlunos[notaID+4]
+                if nota==float and nota2== float and nota3==float and nota4==float:
+                    media=(nota+nota2+nota3+nota4)/4
+                    print('A média do aluno ',subopcoes2,' é de %.2f'%media)
+                else:
+                    print('Está faltando nota. ')
+            else:
+                print('Aluno não encontrado.')
+
+        #APAGAR NOTAS
+        elif subopcoes== 4:
+            print('''O que deseja realizar:
+            1- Apagar todas as notas.
+            2- Apagar uma nota.''')
+            subopcoes2= int(input('-'))
+
+            if subopcoes2== 2:
+                subopcoes2= str(input('Digite o nome do aluno para visualizar as notas:'))
+
+                if subopcoes2 in notasAlunos:
+                    print(subopcoes2,' tem as notas: ')
+                    nota= notasAlunos.index(subopcoes2)+1
+                    nota2= notasAlunos[nota]
+                    total= len(notasAlunos)
+                    cont= 1
+                    while isinstance(nota2, float) and total != nota2:
+                        print(cont,'-', nota2)
+                        nota= notasAlunos.index(nota2)+1
+                        nota2= notasAlunos[nota]
+                        cont= cont+1
+                    
+                    subopcoes3= int(input('Digite o valor da nota que deseja remover: '))
+                    if subopcoes3 >cont:
+                        print('Nota não encontrada.')
+                    elif subopcoes3 <=0:
+                        print('Nota não encontrada.')
+                    
+
+                    elif subopcoes3 <cont:    
+                        
+                        nota= notasAlunos.index(subopcoes2)
+                        notasAlunos.pop(nota+subopcoes3)
+                        print('Nota Removida com sucesso.')
+
+                else:
+                    print('Aluno não encontrado.')
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+            # APAGAR TODAS AS NOTAS 
+            if subopcoes2 == 1:
+                nota= notasAlunos[-1]
+                nota2= notasAlunos.index(nota)
+                conta=-1
+                print(nota2)
+                print(type(nota2))
+                for i in range(nota2):
+
+
+                    if isinstance(notasAlunos[nota2], float):
+                        notasAlunos.pop(nota2)
+                        nota = notasAlunos[conta]
+                        nota2 = notasAlunos.index(nota)
+                    elif isinstance(notasAlunos[nota2], str):
+                        conta = int(conta-1)
+                        nota = notasAlunos[conta]
+                        nota2 = notasAlunos.index(nota)
+
+
+
+                    # if isinstance(nota, float):
+                    #     notasAlunos.pop(nota2)
+                    #     nota= notasAlunos[conta] 
+                    #     nota2= notasAlunos.index(nota)                      
+                    # elif isinstance(nota, str):
+                    #     conta= int(conta-1)
+                    #     nota= notasAlunos[conta]
+                    #     nota2= notasAlunos.index(nota)
+                
+                print('Nota removida.')
+
+            
+
+
 
 
 
