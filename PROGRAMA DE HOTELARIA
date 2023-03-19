@@ -1,0 +1,476 @@
+'''A ideia é esse programa ser um organizador de quartos de hotelaria.'''
+
+
+quarto1=[]
+quarto2=[]
+quarto3=[]
+quarto4=[]
+
+clientes=[]
+pagamentoExtra=[]
+
+opcoes=None
+subopcoes= None
+subopcoes2= False
+subopcoes3= ''
+conta= int
+
+
+print('1- Registrar novo cliente')
+
+print('2- Verificar disponibilidade.')
+
+print('3- Verificar hospedagens')
+
+print('4- Registro de pagamento extra')
+
+print('5- Registrar saida de cliente')
+
+print('6- Sair do programa')
+
+
+while opcoes != 6:
+    opcoes=int(input('Digite uma opção: '))
+    #REGISTRAR NOVO CLIENTE
+    if opcoes == 1:
+        # ADICIONANDO CLIENTE QUARTO 1
+        if len(quarto1) == 0:
+            subopcoes=str(input('Digite o nome do cliente pagante.'))
+            quarto1.append(subopcoes)
+            pagamentoExtra.append(subopcoes)
+            clientes.append(subopcoes)
+            clientes.append(150) #150 VALOR DA HOSPEDAGEM
+            subopcoes2=bool(input('O cliente tem acompanhantes? enter = não: '))
+            # ADICIONANDO ACOMPANHANTES
+            if subopcoes2 == True:
+                subopcoes2= int(input('Digite a quantidade de acompanhantes: '))
+
+                # ADICIONANDO 3 ACOMPANHANTES NO QUARTO1 
+                if subopcoes2 < 4 and subopcoes2 > 0:
+                    for i in range(subopcoes2):
+                        subopcoes3= str(input('Digite o nome do acompanhante: '))
+                        quarto1.append(subopcoes3)
+                    print('Clientes adicionado.')
+                    # FIM ADICIONANDO ATÉ 3 CLIENTES NO QUARTO1 
+
+                # ADICIONANDO +3 CLIENTES NO QUARTO1 
+                elif subopcoes2 >= 4:
+                    print('O máximo suportado é 4 clientes por quartos. DESEJA CONTINUAR?')
+                    subopcoes3= bool(input('enter para sair.'))
+                    if subopcoes3 == True:
+                        for i in range(subopcoes2):
+                            subopcoes2= str(input('Digite o nome do acompanhante: '))
+                            quarto1.append(subopcoes2)
+                        print('Clientes Adicionado.')
+                        # FIM ADICIONANDO +3 CLIENTES NO QUARTO1 
+                    if subopcoes3 == False:
+                        subopcoes2= quarto1.index(subopcoes)
+                        quarto1.pop(subopcoes2)
+                        subopcoes2= clientes.index(subopcoes)
+                        clientes.pop(subopcoes2+1)
+                        clientes.pop(subopcoes2)
+                        print('Cliente removido com sucesso, refaça a operação.')
+                        
+            elif subopcoes2 == False:
+                print('Cliente adicionado com sucesso.') 
+        #  ADICIONANDO CLIENTE QUARTO 2
+        elif len(quarto2) == 0:
+            subopcoes=str(input('Digite o nome do cliente pagante.'))
+            quarto2.append(subopcoes)
+            pagamentoExtra.append(subopcoes)
+            clientes.append(subopcoes)
+            clientes.append(150)
+            subopcoes2=bool(input('O cliente tem acompanhantes? enter= não: '))
+            # ADICIONANDO ACOMPANHANTES
+            if subopcoes2 == True:
+                subopcoes2= int(input('Digite a quantidade de acompanhantes: '))
+
+                # ADICIONANDO 3 ACOMPANHANTES NO QUARTO2 
+                if subopcoes2 < 4 and subopcoes2 > 0:
+                    for i in range(subopcoes2):
+                        subopcoes3= str(input('Digite o nome do acompanhante: '))
+                        quarto2.append(subopcoes3)
+                    print('Clientes adicionado.')
+                    # FIM ADICIONANDO ATÉ 3 CLIENTES NO QUARTO2 
+
+                # ADICIONANDO +3 CLIENTES NO QUARTO2 
+                elif subopcoes2 >= 4:
+                    print('O máximo suportado é 4 clientes por quartos. DESEJA CONTINUAR?')
+                    subopcoes3= bool(input('enter para sair.'))
+                    if subopcoes3 == True:
+                        for i in range(subopcoes2):
+                            subopcoes2= str(input('Digite o nome do acompanhante: '))
+                            quarto2.append(subopcoes2)
+                        print('Clientes Adicionado.')
+                        # FIM ADICIONANDO +3 CLIENTES NO QUARTO2 
+                    if subopcoes3 == False:
+                        subopcoes2= quarto2.index(subopcoes)
+                        quarto2.pop(subopcoes2)
+                        subopcoes2= clientes.index(subopcoes)
+                        clientes.pop(subopcoes2+1)
+                        clientes.pop(subopcoes2)
+                        print('Cliente removido com sucesso, refaça a operação.')
+                        
+            elif subopcoes2 == False:
+                print('Cliente adicionado com sucesso.') 
+        # ADICIONANDO CLIENTE QUARTO 3
+        elif len(quarto3) == 0:
+            subopcoes=str(input('Digite o nome do cliente pagante.'))
+            quarto3.append(subopcoes)
+            pagamentoExtra.append(subopcoes)
+            clientes.append(subopcoes)
+            clientes.append(150)
+            subopcoes2=bool(input('O cliente tem acompanhantes? enter= não: '))
+            # ADICIONANDO ACOMPANHANTES
+            if subopcoes2 == True:
+                subopcoes2= int(input('Digite a quantidade de acompanhantes: '))
+
+                # ADICIONANDO 3 ACOMPANHANTES NO QUARTO3 
+                if subopcoes2 < 4 and subopcoes2 > 0:
+                    for i in range(subopcoes2):
+                        subopcoes3= str(input('Digite o nome do acompanhante: '))
+                        quarto3.append(subopcoes3)
+                    print('Clientes adicionado.')
+                    # FIM ADICIONANDO ATÉ 3 CLIENTES NO QUARTO3 
+
+                # ADICIONANDO +3 CLIENTES NO QUARTO3 
+                elif subopcoes2 >= 4:
+                    print('O máximo suportado é 4 clientes por quartos. DESEJA CONTINUAR?')
+                    subopcoes3= bool(input('enter para sair '))
+                    if subopcoes3 == True:
+                        for i in range(subopcoes2):
+                            subopcoes2= str(input('Digite o nome do acompanhante: '))
+                            quarto3.append(subopcoes2)
+                        print('Clientes Adicionado.')
+                        # FIM ADICIONANDO +3 CLIENTES NO QUARTO3
+
+                    if subopcoes3 == False:
+                        subopcoes2= quarto3.index(subopcoes)
+                        quarto3.pop(subopcoes2)
+                        subopcoes2= clientes.index(subopcoes)
+                        clientes.pop(subopcoes2+1)                        
+                        clientes.pop(subopcoes2)
+                        print('Cliente removido com sucesso, refaça a operação.')
+                        
+                        
+            elif subopcoes2 == False:
+                print('Cliente adicionado com sucesso.') 
+        # ADICIONANDO CLIENTE QUARTO 4                
+        elif len(quarto4) == 0:
+            subopcoes=str(input('Digite o nome do cliente pagante.'))
+            quarto4.append(subopcoes)
+            pagamentoExtra.append(subopcoes)
+            clientes.append(subopcoes)
+            clientes.append(150)
+            subopcoes2=bool(input('O cliente tem acompanhantes? enter= não '))
+            # ADICIONANDO ACOMPANHANTES
+            if subopcoes2 == True:
+                subopcoes2= int(input('Digite a quantidade de acompanhantes: '))
+
+                # ADICIONANDO 3 ACOMPANHANTES NO QUARTO4 
+                if subopcoes2 < 4 and subopcoes2 > 0:
+                    for i in range(subopcoes2):
+                        subopcoes3= str(input('Digite o nome do acompanhante: '))
+                        quarto4.append(subopcoes3)
+                    print('Clientes adicionado.')
+                    # FIM ADICIONANDO ATÉ 3 CLIENTES NO QUARTO4 
+
+                # ADICIONANDO +3 CLIENTES NO QUARTO4 
+                elif subopcoes2 >= 4:
+                    print('O máximo suportado é 4 clientes por quartos. DESEJA CONTINUAR?')
+                    subopcoes3= bool(input('enter para sair '))
+                    # ADICIONANDO CLIENTES 
+                    if subopcoes3 == True:
+                        for i in range(subopcoes2):
+                            subopcoes2= str(input('Digite o nome do acompanhante: '))
+                            quarto4.append(subopcoes2)
+                        print('Clientes Adicionado.')
+                        
+                    # REMOVENDO CLIENTES 
+
+                    if subopcoes3 == False:
+                        subopcoes2= quarto4.index(subopcoes)
+                        quarto4.pop(subopcoes2)
+                        subopcoes2= clientes.index(subopcoes)
+                        clientes.pop(subopcoes2+1)
+                        clientes.pop(subopcoes2)
+                        print('Cliente removido com sucesso, refaça a operação.')
+                                            
+            elif subopcoes2 == False:
+                print('Cliente adicionado com sucesso.') 
+        else:
+            print('Todos os quartos estão ocupados')
+    # VERIFICAR DISPONIBILIDADE DE QUARTO
+    elif opcoes == 2:
+        if len(quarto1) == 0:
+             print('Quarto 1 está disponivel.')
+        elif len(quarto2)== 0:
+            print('Quarto 2 está disponivel.')
+        elif len(quarto3)== 0:
+            print('Quarto 3 está disponivel.')
+        elif len(quarto4)== 0:
+            print('Quarto 4 está disponivel.')
+        else:
+            print('Todos os quartos estão ocupados.')
+    # VERIFICAÇÃO DE HOSPEDAGEM
+    elif opcoes == 3:
+        print('''Bem Vindo ao verificação de hospedes:
+        1- Verificação de conta
+        2- Verificação de conta detalhada
+        3- Visualizar todos clientes''')
+        subopcoes= int(input('- '))
+        # VERIFICAÇÃO DE CONTA 
+        if subopcoes == 1:
+            subopcoes2= str(input('Digite o nome do cliente: '))
+            if subopcoes2 in quarto1:
+                subopcoes3= quarto1[0]
+                conta= clientes.index(subopcoes3)+1
+                print('A conta do quarto 1 do responsavel: ', subopcoes3,' está com a conta: ', clientes[conta])
+
+            elif subopcoes2 in quarto2:
+                subopcoes3= quarto2[0]
+                conta= clientes.index(subopcoes3)+1
+                print('A conta do quarto 2 do responsavel: ', subopcoes3,' está com a conta: ', clientes[conta])
+
+            elif subopcoes2 in quarto3:
+                subopcoes3= quarto3[0]
+                conta= clientes.index(subopcoes3)+1
+                print('A conta do quarto 3 do responsavel: ', subopcoes3,' está com a conta: ', clientes[conta])
+
+            elif subopcoes2 in quarto4:
+                subopcoes3= quarto4[0]
+                conta= clientes.index(subopcoes3)+1
+                print('A conta do quarto 4 do responsavel: ', subopcoes3,' está com a conta: ', clientes[conta])
+            
+            else:
+                print('Cliente não encontrado.')
+
+        elif subopcoes== 2:
+            subopcoes2= str(input('Digite o nome do cliente: '))
+            if subopcoes2 in quarto1:
+                print(quarto1)
+            elif subopcoes2 in quarto2:
+                print(quarto2)
+            elif subopcoes2 in quarto3:
+                print(quarto3)
+            elif subopcoes2 in quarto4:
+                print(quarto4)
+            else:
+                print('Cliente não encontrado.')
+
+        elif subopcoes== 3:
+            print('Registro quarto 1:')
+            print(quarto1)
+
+            print('Registro quarto 2:')
+            print(quarto2)
+
+            print('Registro quarto 3:')
+            print(quarto3)
+
+            print('Registro quarto 4:')
+            print(quarto4)
+    # REGISTRO DE PAGAMENTO EXTRA
+    elif opcoes == 4:
+        subopcoes=str(input('Digite o nome do cliente. '))
+
+
+        if subopcoes in quarto1:
+            subopcoes4= quarto1[0]
+            subopcoes2= clientes.index(subopcoes4)+1
+            conta= float(input('Digite o valor adicional: '))
+            clientes[subopcoes2]= clientes[subopcoes2]+conta
+
+            conta=str(input('Digite o registro: '))
+            conta2= 'O cliente: ', subopcoes, 'pegou ', conta
+            subopcoes2= pagamentoExtra.index(subopcoes4)+1
+            pagamentoExtra.insert(subopcoes2, conta2)
+
+            quarto1.append(conta2)
+            
+        elif subopcoes in quarto2:
+            subopcoes4= quarto2[0]
+            subopcoes2= clientes.index(subopcoes4)+1
+            conta= float(input('Digite o valor adicional: '))
+            clientes[subopcoes2]= clientes[subopcoes2]+conta
+
+            conta=str(input('Digite o registro: '))
+            conta2= 'O cliente: ', subopcoes, 'pegou ', conta
+            subopcoes2= pagamentoExtra.index(subopcoes4)+1
+            pagamentoExtra.insert(subopcoes2, conta2)
+
+            quarto2.append(conta2)
+                        
+
+        elif subopcoes in quarto3:
+            subopcoes4= quarto3[0]
+            subopcoes2= clientes.index(subopcoes4)+1
+            conta= float(input('Digite o valor adicional: '))
+            clientes[subopcoes2]= clientes[subopcoes2]+conta
+
+            conta=str(input('Digite o registro: '))
+            conta2= 'O cliente: ', subopcoes, 'pegou ', conta
+            subopcoes2= pagamentoExtra.index(subopcoes4)+1
+            pagamentoExtra.insert(subopcoes2, conta2)
+
+            quarto3.append(conta2)
+            
+
+        elif subopcoes in quarto4:
+            subopcoes4= quarto4[0]
+            subopcoes2= clientes.index(subopcoes4)+1
+            conta= float(input('Digite o valor adicional: '))
+            clientes[subopcoes2]= clientes[subopcoes2]+conta
+
+            conta=str(input('Digite o registro: '))
+            conta2= 'O cliente: ', subopcoes, 'pegou ', conta
+            subopcoes2= pagamentoExtra.index(subopcoes4)+1
+            pagamentoExtra.insert(subopcoes2, conta2)
+
+            quarto4.append(conta2)
+            
+        else:
+            print('Cliente não encontrado.')
+
+    elif opcoes== 5:
+        subopcoes= int(input('Digite o numero do quarto: '))
+        if subopcoes== 1:
+            perg=bool(input('Tem certeza que deseja fechar o quarto 1?'))
+            if perg == True:
+                subopcoes= quarto1[0]
+                subopcoes2= clientes.index(subopcoes)+1
+                print('A conta do quarto 1 é: ', clientes[subopcoes2])
+                print('Descrição detalhada:')
+                print(quarto1)
+                subopcoes3=bool(input('Precisa de troco? '))
+                if subopcoes3 == True:
+                    subopcoes3= float(input('Digite o quanto lhe foi dado: '))
+                    print('O troco é de: ',subopcoes3-clientes[subopcoes2])
+                elif subopcoes3== False:
+                    continue
+
+                clientes.pop(subopcoes2)
+                clientes.pop(subopcoes2-1)
+
+                for i in range (len(quarto1)):
+                    excluir= quarto1[0]
+                    if excluir in pagamentoExtra:
+                        excluir2= pagamentoExtra.index(excluir)
+                        pagamentoExtra.pop(excluir2)
+                        quarto1.pop(0)
+                    else:
+                        quarto1.pop(0)
+                quarto1= 0
+
+        elif subopcoes== 2:
+            perg=bool(input('Tem certeza que deseja fechar o quarto 2?'))
+            if perg== True:          
+                subopcoes= quarto2[0]
+                subopcoes2= clientes.index(subopcoes)+1
+                print('A conta do quarto 2 é: ', clientes[subopcoes2])
+                print('Descrição detalhada:')
+                print(quarto2)
+                subopcoes3=bool(input('Precisa de troco? '))
+                if subopcoes3 == True:
+                    subopcoes3= float(input('Digite o quanto lhe foi dado: '))
+                    print('O troco é de: ',subopcoes3-clientes[subopcoes2])
+                elif subopcoes3== False:
+                    continue
+
+                clientes.pop(subopcoes2)
+                clientes.pop(subopcoes2-1)
+
+                for i in range (len(quarto2)):
+                    excluir= quarto2[0]
+                    if excluir in pagamentoExtra:
+                        excluir2= pagamentoExtra.index(excluir)
+                        pagamentoExtra.pop(excluir2)
+                        quarto2.pop(0)
+                    else:
+                        quarto2.pop(0)
+                quarto2= 0
+
+        elif subopcoes== 3:
+            perg=bool(input('Tem certeza que deseja fechar o quarto 3?'))
+            if perg== True:           
+                subopcoes= quarto3[0]
+                subopcoes2= clientes.index(subopcoes)+1
+                print('A conta do quarto 3 é: ', clientes[subopcoes2])
+                print('Descrição detalhada:')
+                print(quarto3)
+                subopcoes3=bool(input('Precisa de troco? '))
+                if subopcoes3 == True:
+                    subopcoes3= float(input('Digite o quanto lhe foi dado: '))
+                    print('O troco é de: ',subopcoes3-clientes[subopcoes2])
+                elif subopcoes3== False:
+                    continue
+
+                clientes.pop(subopcoes2)
+                clientes.pop(subopcoes2-1)
+
+                for i in range (len(quarto3)):
+                    excluir= quarto3[0]
+                    if excluir in pagamentoExtra:
+                        excluir2= pagamentoExtra.index(excluir)
+                        pagamentoExtra.pop(excluir2)
+                        quarto3.pop(0)
+                    else:
+                        quarto3.pop(0)
+
+                quarto3= 0
+
+        elif subopcoes== 4:
+            perg=bool(input('Tem certeza que deseja fechar o quarto 4?'))
+            if perg== True:
+                
+                subopcoes= quarto4[0]
+                subopcoes2= clientes.index(subopcoes)+1
+                print('A conta do quarto 4 é: ', clientes[subopcoes2])
+                print('Descrição detalhada:')
+                print(quarto4)
+                subopcoes3=bool(input('Precisa de troco? '))
+                if subopcoes3 == True:
+                    subopcoes3= float(input('Digite o quanto lhe foi dado: '))
+                    print('O troco é de: ',subopcoes3-clientes[subopcoes2])
+                elif subopcoes3== False:
+                    continue
+
+                clientes.pop(subopcoes2)
+                clientes.pop(subopcoes2-1)
+
+                for i in range (len(quarto4)):
+                    excluir= quarto4[0]
+                    if excluir in pagamentoExtra:
+                        excluir2= pagamentoExtra.index(excluir)
+                        pagamentoExtra.pop(excluir2)
+                        quarto4.pop(0)
+                    else:
+                        quarto4.pop(0)
+                quarto4=0
+            
+        else:
+            print('Quarto não encontrado.')
+
+
+            
+    
+   
+
+    print('1- Registrar novo cliente')
+
+    print('2- Verificar disponibilidade.')
+
+    print('2- Verificar hospedagens')
+
+    print('4- Registro de pagamento extra')
+
+    print('5- Registrar saida de cliente')
+
+    print('6- Sair do programa')
+                
+print(clientes) #AUXILIA NO PAGAMENTO DA CONTA
+print(quarto1, 'quarto 1') 
+print(quarto2, 'quarto 2')
+print(quarto3, 'quarto 3')
+print(quarto4, 'quarto 4')
+print(pagamentoExtra) #REGISTROS
