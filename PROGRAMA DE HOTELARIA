@@ -347,7 +347,8 @@ while opcoes != 6:
                     subopcoes3= float(input('Digite o quanto lhe foi dado: '))
                     print('O troco é de: ',subopcoes3-clientes[subopcoes2])
                 elif subopcoes3== False:
-                    continue
+                    print('Ok.')
+                    
 
                 clientes.pop(subopcoes2)
                 clientes.pop(subopcoes2-1)
@@ -360,7 +361,9 @@ while opcoes != 6:
                         quarto1.pop(0)
                     else:
                         quarto1.pop(0)
-                quarto1= 0
+                quarto1= []
+                print('Cliente e seus dados removidos.')
+                print(quarto1)
 
         elif subopcoes== 2:
             perg=bool(input('Tem certeza que deseja fechar o quarto 2?'))
@@ -375,7 +378,7 @@ while opcoes != 6:
                     subopcoes3= float(input('Digite o quanto lhe foi dado: '))
                     print('O troco é de: ',subopcoes3-clientes[subopcoes2])
                 elif subopcoes3== False:
-                    continue
+                    print('ok.')
 
                 clientes.pop(subopcoes2)
                 clientes.pop(subopcoes2-1)
@@ -388,7 +391,9 @@ while opcoes != 6:
                         quarto2.pop(0)
                     else:
                         quarto2.pop(0)
-                quarto2= 0
+                quarto2= []
+                print(quarto2)
+                print('Cliente e seus dados removidos.')
 
         elif subopcoes== 3:
             perg=bool(input('Tem certeza que deseja fechar o quarto 3?'))
@@ -403,7 +408,7 @@ while opcoes != 6:
                     subopcoes3= float(input('Digite o quanto lhe foi dado: '))
                     print('O troco é de: ',subopcoes3-clientes[subopcoes2])
                 elif subopcoes3== False:
-                    continue
+                    print('ok.')
 
                 clientes.pop(subopcoes2)
                 clientes.pop(subopcoes2-1)
@@ -417,7 +422,9 @@ while opcoes != 6:
                     else:
                         quarto3.pop(0)
 
-                quarto3= 0
+                quarto3= []
+                print('Cliente e seus dados removidos.')
+                print(quarto3)
 
         elif subopcoes== 4:
             perg=bool(input('Tem certeza que deseja fechar o quarto 4?'))
@@ -433,7 +440,7 @@ while opcoes != 6:
                     subopcoes3= float(input('Digite o quanto lhe foi dado: '))
                     print('O troco é de: ',subopcoes3-clientes[subopcoes2])
                 elif subopcoes3== False:
-                    continue
+                    print('ok.')
 
                 clientes.pop(subopcoes2)
                 clientes.pop(subopcoes2-1)
@@ -446,7 +453,9 @@ while opcoes != 6:
                         quarto4.pop(0)
                     else:
                         quarto4.pop(0)
-                quarto4=0
+                quarto4= []
+                print('Cliente e seus dados removidos.')
+                print(quarto4)
             
         else:
             print('Quarto não encontrado.')
@@ -460,7 +469,7 @@ while opcoes != 6:
 
     print('2- Verificar disponibilidade.')
 
-    print('2- Verificar hospedagens')
+    print('3- Verificar hospedagens')
 
     print('4- Registro de pagamento extra')
 
